@@ -1,0 +1,68 @@
+✅ VERIFICAR GOOGLE SHEETS
+
+PASO 1: Abre tu Google Sheet
+=============================
+URL: https://docs.google.com/spreadsheets
+
+1. Busca la hoja con ID: 1lvElpd0A0SgG7wbTMtydC4K9rz_Vt5UByUg_vYalBVM
+2. Si no aparece en recientes, cópialo en la URL directamente:
+   https://docs.google.com/spreadsheets/d/1lvElpd0A0SgG7wbTMtydC4K9rz_Vt5UByUg_vYalBVM/edit
+
+PASO 2: Verifica que existe la pestaña "Clientes"
+==================================================
+1. Mira las pestañas abajo de la hoja
+2. Debe haber una que diga "Clientes"
+3. Si NO existe, créala:
+   - Haz clic en "+"
+   - Nombre: "Clientes"
+   - Haz clic en "Crear"
+
+PASO 3: Agrega headers en la primera fila
+==========================================
+1. Haz clic en la celda A1
+2. Agrega estos headers (separados por Tab):
+
+Timestamp | Nombre | Apellido | WhatsApp | Email | Instagram | Meta | Obstáculo | Ingreso | Dedicación | Clientes | Inversión | Confirmación | Fecha | Hora
+
+O manualmente en cada celda:
+- A1: Timestamp
+- B1: Nombre
+- C1: Apellido
+- D1: WhatsApp
+- E1: Email
+- F1: Instagram
+- G1: Meta
+- H1: Obstáculo
+- I1: Ingreso
+- J1: Dedicación
+- K1: Clientes
+- L1: Inversión
+- M1: Confirmación
+- N1: Fecha
+- O1: Hora
+
+PASO 4: Haz clic en A2
+======================
+1. Esto asegura que hay al menos una fila vacía
+2. El backend insertará datos a partir de aquí
+
+PASO 5: Vuelve a la aplicación y prueba
+=======================================
+1. Abre: http://localhost:5173
+2. Llena el formulario
+3. Haz clic en "Siguiente"
+4. Selecciona fecha y hora
+5. Haz clic en "Confirmar Cita"
+6. Vuelve a tu Google Sheet (F5 para refrescar)
+7. Una nueva fila debe aparecer en A2 con los datos
+
+SI FUNCIONA: ✅
+===============
+Los datos aparecerán automáticamente en la hoja
+
+SI NO FUNCIONA: ❌
+==================
+1. Mira los logs en Terminal 1 (Backend)
+2. Busca: "❌ Error guardando en Sheets:"
+3. Copia el mensaje de error exactamente
+4. Pregunta con el error

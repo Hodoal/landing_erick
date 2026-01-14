@@ -1,0 +1,81 @@
+📋 DIAGNOSTICO: Por qué no se envían datos a Google Sheets
+
+PASOS PARA DIAGNOSTICAR:
+
+1. En Terminal (Backend):
+   ===========================
+   Cuando envíes datos desde el formulario, BUSCA estos logs:
+   
+   ✅ SI VES ESTO:
+      📊 Guardando en Sheets: Juan juan@example.com
+         Sheets ID: 1lvElpd0A0SgG7wbTMtydC4K9rz_Vt5UByUg_vYalBVM
+         Rango: Clientes!A:O
+      ✅ Datos guardados en Google Sheets
+         Filas añadidas: 1
+   
+      SIGNIFICA: El backend SÍ está enviando a Sheets
+      → Revisa tu Google Sheet directamente
+      → Los datos deberían estar ahí
+   
+   ❌ SI VES ESTO:
+      ❌ Error guardando en Sheets:
+         Mensaje: [error message aquí]
+         Código: [error code]
+      
+      SIGNIFICA: Hay un error en la API
+      → Lee el "Mensaje" para saber qué pasó
+      → Los errores comunes son:
+         - "notFound": El Sheets ID es incorrecto
+         - "invalidArgument": El nombre de la hoja es incorrecto
+         - "permission": No tienes permisos
+
+2. Posibles Causas:
+
+   ❌ CAUSA 1: El nombre de la hoja es incorrecto
+      Solución:
+      - Abre: https://sheets.google.com
+      - Busca tu hoja: "1lvElpd0A0SgG7wbTMtydC4K9rz_Vt5UByUg_vYalBVM"
+      - Verifica que existe una pestaña llamada "Clientes"
+      - Si no existe, crea una
+
+   ❌ CAUSA 2: No hay headers en la primera fila
+      Solución:
+      - Abre tu Google Sheet
+      - En la fila 1 (A1, B1, C1...) agrega estos headers:
+        Timestamp | Nombre | Apellido | WhatsApp | Email | Instagram | Meta | Obstáculo | Ingreso | Dedicación | Clientes | Inversión | Confirmación | Fecha | Hora
+
+   ❌ CAUSA 3: El Sheets ID está mal
+      Solución:
+      - Abre tu Google Sheet
+      - Copia el ID de la URL:
+        docs.google.com/spreadsheets/d/{ID_AQUI}/...
+      - Verifica que sea: 1lvElpd0A0SgG7wbTMtydC4K9rz_Vt5UByUg_vYalBVM
+
+3. Cómo ver los logs detallados:
+
+   Desde otra terminal, ejecuta:
+   
+   bash test-sheets.sh
+   
+   Esto enviará datos de prueba y mostrará la respuesta exacta.
+
+4. Si aún no funciona:
+
+   Muestra los logs completos del backend donde dice:
+   
+   ❌ Error guardando en Sheets:
+      Mensaje: [COPIA ESTO]
+      Código: [COPIA ESTO]
+
+SIGUIENTE PASO:
+===============
+
+1. Verifica que tu Google Sheet existe y tiene:
+   - Pestaña "Clientes"
+   - Headers en la primera fila
+
+2. Llena el formulario completo
+
+3. Observa los logs en Terminal 1 (Backend)
+
+4. Si hay error, copia exactamente qué dice

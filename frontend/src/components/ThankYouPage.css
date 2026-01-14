@@ -1,0 +1,199 @@
+.thankyou-page {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  padding: 40px 20px;
+  position: relative;
+}
+
+.thankyou-back-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: linear-gradient(135deg, #9c27b0, #7b1fa2);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+.thankyou-back-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(156, 39, 176, 0.4);
+}
+
+.thankyou-page-content {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.thankyou-page-header {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.thankyou-page-header h1 {
+  font-size: 2.5rem;
+  color: #9c27b0;
+  font-weight: 900;
+  margin-bottom: 15px;
+  text-shadow: 0 0 20px rgba(156, 39, 176, 0.3);
+  line-height: 1.4;
+}
+
+.thankyou-page-subtitle {
+  color: #cdd726;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.thankyou-page-video-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(156, 39, 176, 0.3);
+}
+
+.whatsapp-card-page {
+  background: rgba(0, 0, 0, 0.4);
+  border: 2px dashed #cdd726;
+  border-radius: 16px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.whatsapp-logo-page {
+  width: 80px;
+  height: 80px;
+  color: #cdd726;
+  flex-shrink: 0;
+}
+
+.whatsapp-header-title-page {
+  color: #cdd726;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  letter-spacing: 1px;
+}
+
+.whatsapp-text-page {
+  color: #e0e0e0;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.whatsapp-text-page strong {
+  color: #fff;
+  font-weight: 700;
+}
+
+.thankyou-page-button {
+  width: 100%;
+  background: linear-gradient(135deg, #9c27b0, #7b1fa2);
+  color: white;
+  border: none;
+  padding: 16px 30px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(156, 39, 176, 0.4);
+}
+
+.thankyou-page-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(156, 39, 176, 0.6);
+}
+
+.thankyou-page-button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .thankyou-page {
+    padding: 30px 15px;
+  }
+
+  .thankyou-page-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .thankyou-page-subtitle {
+    font-size: 1rem;
+  }
+
+  .whatsapp-card-page {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .whatsapp-logo-page {
+    width: 60px;
+    height: 60px;
+  }
+
+  .whatsapp-header-title-page {
+    font-size: 1.1rem;
+  }
+
+  .whatsapp-text-page {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .thankyou-back-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    top: 15px;
+    left: 15px;
+  }
+
+  .thankyou-page-content {
+    gap: 25px;
+    margin-top: 20px;
+  }
+
+  .thankyou-page-header h1 {
+    font-size: 1.3rem;
+  }
+
+  .whatsapp-card-page {
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .whatsapp-logo-page {
+    width: 50px;
+    height: 50px;
+  }
+
+  .whatsapp-header-title-page {
+    font-size: 1rem;
+  }
+
+  .whatsapp-text-page {
+    font-size: 0.85rem;
+  }
+}

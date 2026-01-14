@@ -1,0 +1,104 @@
+✅ CHECKLIST PARA AGENDAMIENTO FUNCIONAL
+
+PASO 1: Backend Iniciado ✓
+└─ cd backend && npm start
+
+PASO 2: Autenticación Completada ✓
+├─ Abre: http://localhost:3000/api/auth/login
+├─ Haz clic en "Autorizar con Google"
+├─ Selecciona: jdelaossa59@gmail.com
+├─ Aprueba: Calendar + Sheets
+└─ Verás: ✅ Autenticación Exitosa
+
+PASO 3: Frontend Iniciado ✓
+└─ cd frontend && npm run dev
+
+PASO 4: Crear Cita
+├─ Abre: http://localhost:5173
+├─ Llena el formulario completamente
+├─ Haz clic en "Siguiente"
+├─ Selecciona una fecha
+├─ Selecciona una hora
+└─ Haz clic en "Confirmar Cita"
+
+PASO 5: Verificar Resultados ✓
+├─ Revisa Terminal 1 (backend):
+│  ├─ ✅ Datos guardados en Google Sheets
+│  └─ ✅ Evento creado en Google Calendar
+├─ Abre Google Sheets: 
+│  └─ Verifica que aparezca nueva fila
+└─ Abre Google Calendar:
+   └─ Verifica que aparezca nuevo evento
+
+
+IMPORTANTE:
+
+❌ Si NO ves los mensajes "✅" en Terminal 1:
+
+1. Backend no está autenticado
+   Solución: Completa el paso 2 (autenticación)
+
+2. Variables de entorno no se cargaron
+   Solución: Verifica que backend/.env existe y tiene datos
+   
+3. Endpoint del frontend es incorrecto
+   Solución: Verifica VITE_API_ENDPOINT=http://localhost:3000/api
+   
+4. Google Sheets ID incorrecto
+   Solución: Copia el ID de la URL de Google Sheets
+
+
+CREDENCIALES CORRECTAS:
+
+Email Gmail: jdelaossa59@gmail.com
+Calendar ID: jdelaossa59@gmail.com
+Sheets ID: 1lvElpd0A0SgG7wbTMtydC4K9rz_Vt5UByUg_vYalBVM
+Client ID: 949386149396-dei3ajfq69votk3fop2ia60fruqifjca.apps.googleusercontent.com
+
+
+LOGS A BUSCAR EN TERMINAL 1:
+
+📋 Verificando configuración...
+✅ VITE_GOOGLE_CLIENT_ID: 949386149...
+✅ VITE_GOOGLE_CLIENT_SECRET: GOCSPX-b...
+✅ VITE_GOOGLE_CALENDAR_ID: jdelaossa...
+✅ VITE_GOOGLE_SHEETS_ID: 1lvElpd0A...
+
+✅ Autenticación exitosa
+
+📊 Guardando en Sheets: Juan juan@example.com
+✅ Datos guardados en Google Sheets
+
+📅 Creando evento para: Juan juan@example.com
+✅ Evento creado en Google Calendar
+
+
+FLUJO COMPLETO:
+
+Usuario → Formulario → Fecha/Hora → Confirmar
+   ↓           ↓           ↓            ↓
+Frontend    FormModal  DateSelection  POST a backend
+   ↓           ↓           ↓            ↓
+           POST /api/sheets/append
+           POST /api/calendar/create-event
+                ↓
+            Backend autentica
+                ↓
+          Google Sheets + Calendar
+                ↓
+             ¡LISTO!
+
+
+¿PROBLEMAS?
+
+1. Backend no inicia:
+   → npm install en backend/
+   
+2. OAuth no funciona:
+   → Verifica Google Cloud Console
+
+3. Datos no se guardan:
+   → Revisa logs en Terminal 1
+
+4. Frontend no conecta:
+   → Verifica http://localhost:3000/api/health en navegador

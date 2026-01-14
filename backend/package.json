@@ -1,0 +1,22 @@
+{
+  "name": "landing-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Backend para gestionar Google Calendar y Sheets",
+  "main": "server.mjs",
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "nodemon server.mjs"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "google-auth-library": "^9.14.1",
+    "googleapis": "^118.0.0",
+    "nodemailer": "^7.0.12"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
