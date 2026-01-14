@@ -25,6 +25,9 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 
+// Manejo explícito de preflight requests
+app.options('*', cors(corsOptions));
+
 // Validar variables de entorno
 const requiredEnvVars = [
   'VITE_GOOGLE_CLIENT_ID',
