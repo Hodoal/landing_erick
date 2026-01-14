@@ -28,6 +28,11 @@ app.use(express.json());
 // Manejo explícito de preflight requests
 app.options('*', cors(corsOptions));
 
+// Health check endpoint
+app.get('/health', (req, res) => {
+  res.json({ status: 'OK', cors: 'configured' });
+});
+
 // Validar variables de entorno
 const requiredEnvVars = [
   'VITE_GOOGLE_CLIENT_ID',
