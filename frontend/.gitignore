@@ -32,3 +32,4 @@ coverage/
 
 # IDE
 .DS_Store
+.vercel
